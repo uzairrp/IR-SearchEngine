@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block page_title %}Statistics{% endblock %}
+{% block content %}
+    <div class="container mt-4">
+        <h1>Statistics</h1>
+
+        <h3>Most Visited Documents</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Document ID</th>
+                    <th>Visits</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doc_id, visits in most_visited_docs %}
+                    <tr>
+                        <td>{{ doc_id }}</td>
+                        <td>{{ visits }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Preferred Browsers</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Browser</th>
+                    <th>Users</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for browser, count in preferred_browsers.items() %}
+                    <tr>
+                        <td>{{ browser }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Preferred Queries</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Query</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for query, count in preferred_queries %}
+                    <tr>
+                        <td>{{ query }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- New Statistics -->
+        <h3>Average Session Duration</h3>
+        <p><strong>{{ avg_session_duration|round(2) }} seconds</strong></p>
+
+        <h3>Success Rate of Queries</h3>
+        <p><strong>{{ success_rate|round(2) }}%</strong></p>
+    </div>
+    <div class="mt-4">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+{% endblock %}

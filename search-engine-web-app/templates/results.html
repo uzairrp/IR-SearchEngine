@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block page_title %}{{ page_title }}{% endblock %}
+{% block content %}
+    <!-- Found <strong>{{ found_counter }}</strong> results, showing <strong> top 10: </strong> -->
+
+    Found <strong>{{ found_counter }}</strong> results, 
+    {% if found_counter >= 10 %}
+        showing <strong>top 10:</strong>
+    {% else %}
+        showing <strong>top {{ found_counter }}</strong> results:
+    {% endif %}
+
+    <hr>
+    {% for item in results_list %}
+        <div class="result-item pb-3" style="border-bottom: 1px solid #ddd; margin-bottom: 15px; padding-bottom: 10px;">
+            <!-- Title in bold, black, clickable, and with an icon -->
+            <div class="doc-title">
+                <a href="/doc_details?id={{ item.id }}&search_id={{ session['last_request_id'] }}&ranking={{ loop.index }}"
+                style="text-decoration: none; color: #333; font-weight: bold; font-size: 1.2rem; display: block;"
+                onmouseover="this.style.textDecoration='underline';"
+                onmouseout="this.style.textDecoration='none';">
+                    <!-- Icon before the title -->
+                    <i class="fa fa-file-text-o" style="margin-right: 10px; color: #555;"></i> 
+                    {{ item.title }}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="mt-4">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+
+{% endblock %}
+

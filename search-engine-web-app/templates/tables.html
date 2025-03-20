@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block page_title %}Analytics Tables{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Analytics Tables</h1>
+
+    <!-- Sessions Table -->
+    <div class="table-responsive mt-4">
+        <h2>Sessions</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session_id, session_details in sessions.items() %}
+                <tr>
+                    <td>{{ session_id }}</td>
+                    <td>
+                        <ul>
+                            {% for key, value in session_details.items() %}
+                            <li><strong>{{ key | capitalize }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Requests Table -->
+    <div class="table-responsive mt-4">
+        <h2>Requests</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request_id, request_details in requests.items() %}
+                <tr>
+                    <td>{{ request_id }}</td>
+                    <td>
+                        <ul>
+                            {% for key, value in request_details.items() %}
+                            <li><strong>{{ key | capitalize }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Clicks Table -->
+    <div class="table-responsive mt-4">
+        <h2>Clicks</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for click_id, click_details in clicks.items() %}
+                <tr>
+                    <td>{{ click_id }}</td>
+                    <td>
+                        <ul>
+                            {% for key, value in click_details.items() %}
+                            <li><strong>{{ key | capitalize }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-4">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
