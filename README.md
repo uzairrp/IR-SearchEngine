@@ -1,7 +1,55 @@
 # Search Engine with Web Analytics
 # IR Project
 
-This projects contains the startup Flask files for developing a web application.
+This projects contains the code for treating raw, real-world data and preparing it for a search engine. It also contains the startup Flask files for developing a web application.
+
+The Notebook is structured into three main parts, each dedicated to a distinct stage of processing textual data for indexing and ranking. It is designed to analyze textual files, create searchable indices, and rank results based on relevance.
+
+## Analysis
+This section focuses on processing raw text data. It involves:
+
+    * Reading text files from a specified directory.
+
+    * Cleaning and tokenizing the text.
+
+    * Extracting metadata (such as titles or headings).
+
+    * Performing Named Entity Recognition (NER)/keyword extraction.
+
+## Indexing
+In this stage:
+
+    * The cleaned and processed text is converted into a suitable index structure.
+
+    * TF-IDF or other vector-based models may be used.
+
+    * An inverted index or a document-term matrix is created for fast search and retrieval.
+
+## Ranking
+This final section:
+
+    * Accepts a search query or keyword input.
+
+    * Calculates similarity scores between the query and the indexed documents.
+
+    * Sorts and ranks the documents based on relevance.
+
+    * Outputs the top-ranked documents with scores or matched highlights.
+
+To run the code, it is necessary to Ensure your input text files are located in the directory defined early in the notebook. Also, the notebook may generate or expect output files such as:
+
+    *Cleaned text or token files.
+
+    * Index files (.pkl, .json, or similar).
+
+    * Ranking results (printed or saved to a file).
+
+It is a good idea to ensure that the paths (to the output directories) exist or are created. In case of any issues with the dependencies, it is recommended to install the packages using pip commands.
+Finally, it is to be noted that:
+
+    * This notebook is modular, each part can be run independently if data dependencies are met.
+    
+    * It’s a good idea to run all cells in order at least once to initialize variables and paths properly.
 
 
 ## Starting the Web App
