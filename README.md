@@ -38,7 +38,7 @@ This final section:
 
 To run the code, it is necessary to Ensure your input text files are located in the directory defined early in the notebook. Also, the notebook may generate or expect output files such as:
 
-    *Cleaned text or token files.
+    * Cleaned text or token files.
 
     * Index files (.pkl, .json, or similar).
 
