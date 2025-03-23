@@ -1,56 +1,61 @@
-# Search Engine with Web Analytics
-# IR Project
+# 🔎 Search Engine with Web Analytics  
+### 📚 Information Retrieval Project
 
-This projects contains the code for treating raw, real-world data and preparing it for a search engine. It also contains the startup Flask files for developing a web application.
+This project contains the code for processing raw, real-world text data and preparing it for a **search engine**. It also includes the initial **Flask setup** for a simple web application interface.
 
-The Notebook is structured into three main parts, each dedicated to a distinct stage of processing textual data for indexing and ranking. It is designed to analyze textual files, create searchable indices, and rank results based on relevance.
+The Jupyter Notebook is divided into **three main parts**, each handling a different stage of textual data processing — from cleaning to indexing and ranking.
 
-## Analysis
+---
+
+## 📊 Analysis
+
 This section focuses on processing raw text data. It involves:
 
-    * Reading text files from a specified directory.
+- 📂 Reading text files from a specified directory  
+- 🧹 Cleaning and tokenizing the text  
+- 🏷️ Extracting metadata (such as titles or headings)  
+- 🧠 Performing Named Entity Recognition (NER) / keyword extraction  
 
-    * Cleaning and tokenizing the text.
+---
 
-    * Extracting metadata (such as titles or headings).
+## 🧱 Indexing
 
-    * Performing Named Entity Recognition (NER)/keyword extraction.
+Here we prepare the cleaned data for efficient retrieval:
 
-## Indexing
-In this stage:
+- 🔁 Convert cleaned text into index structures  
+- 📈 Use TF-IDF or other vector-based models  
+- 📇 Create an inverted index or document-term matrix  
 
-    * The cleaned and processed text is converted into a suitable index structure.
+---
 
-    * TF-IDF or other vector-based models may be used.
+## 📈 Ranking
 
-    * An inverted index or a document-term matrix is created for fast search and retrieval.
+In this final stage:
 
-## Ranking
-This final section:
+- 🔍 Accept a search query or keyword input  
+- 🧮 Compute similarity scores with indexed documents  
+- 📊 Rank documents based on relevance  
+- 📃 Display top-ranked documents with scores or matched highlights  
 
-    * Accepts a search query or keyword input.
+---
 
-    * Calculates similarity scores between the query and the indexed documents.
+## ⚙️ How to Run
 
-    * Sorts and ranks the documents based on relevance.
+Make sure your **input text files** are located in the directory defined early in the notebook. The notebook may generate or expect the following outputs:
 
-    * Outputs the top-ranked documents with scores or matched highlights.
+- ✨ Cleaned text/token files  
+- 📁 Index files (`.pkl`, `.json`, etc.)  
+- 📝 Ranking results (printed or saved)  
 
-To run the code, it is necessary to Ensure your input text files are located in the directory defined early in the notebook. Also, the notebook may generate or expect output files such as:
+✅ It’s recommended to ensure all output paths/directories exist before running.
 
-    * Cleaned text or token files.
+📦 To install required packages, use `pip` as needed.
 
-    * Index files (.pkl, .json, or similar).
+💡 **Pro Tip:**  
+The notebook is **modular** — each part can be run independently if data dependencies are met.  
+However, it’s a good idea to **run all cells in order** once to initialize everything properly.
 
-    * Ranking results (printed or saved to a file).
-
-It is a good idea to ensure that the paths (to the output directories) exist or are created. In case of any issues with the dependencies, it is recommended to install the packages using pip commands.
-Finally, it is to be noted that:
-
-    * This notebook is modular, each part can be run independently if data dependencies are met.
-    
-    * It’s a good idea to run all cells in order at least once to initialize variables and paths properly.
-
+---
 
 ## Starting the Web App
 
